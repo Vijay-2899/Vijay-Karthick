@@ -1,0 +1,37 @@
+package automation_Testing;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Webmath_1 {
+
+		public static void main(String[] args) throws InterruptedException {
+			
+			System.setProperty("webdriver.chrome.driver","E:\\Testing\\chromedriver.exe" );
+			
+			WebDriver driver = new ChromeDriver();
+			
+			driver.navigate().to("https://www.webmath.com");
+			driver.manage().window().maximize();
+			
+			//Contact_link
+			
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[1]/a[2]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[2]/div/div/div[1]/a")).click();
+			
+			//About_Webmath
+			
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[1]/a[3]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td/blockquote/ol/li[1]/a")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[1]/a[3]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td/p[4]/a")).click();
+			
+			
+			driver.close();
+			
+			
+		
+	}
+
+}

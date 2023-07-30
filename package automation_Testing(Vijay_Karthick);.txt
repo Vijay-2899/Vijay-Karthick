@@ -1,0 +1,78 @@
+package automation_Testing;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Webmath {
+
+		public static void main(String[] args) throws InterruptedException {
+			
+			System.setProperty("webdriver.chrome.driver","E:\\Testing\\chromedriver.exe" );
+			
+			WebDriver driver =new ChromeDriver();
+			
+			driver.navigate().to("https://www.webmath.com");
+			driver.manage().window().maximize();
+			
+			//Homepage
+			
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[2]/div/div/div[1]/a")).click();
+			
+			//Dropdown
+			
+			driver.findElement(By.id("topicItem")).click();
+			
+			//dropdown1
+			
+			WebElement dropdown = driver.findElement(By.name("topicItem"));
+			Select select = new Select(dropdown);
+			select.selectByIndex(1);
+			driver.findElement(By.name("s")).sendKeys("2");
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[2]/form/center/p[3]/input[1]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/a/img")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[2]/form/center/p[4]/a")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[1]/center/table/tbody/tr/td[2]/form/input[3]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/a/img")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[2]/div/div/div[1]/a")).click();
+			
+			//dropdpwn2
+			
+			WebElement dropdown1 = driver.findElement(By.name("topicItem"));
+			Select select1 = new Select(dropdown1);
+			select1.selectByIndex(2);
+			driver.findElement(By.name("s")).sendKeys("5+5");
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[2]/form/center/p/input[1]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/a/img")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[2]/div/div/div[1]/a")).click();
+			
+			//dropdown3
+			
+			WebElement dropdown2 = driver.findElement(By.name("topicItem"));
+			Select select2 = new Select(dropdown2);
+			select2.selectByIndex(3);
+			driver.findElement(By.name("top")).sendKeys("+5");
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/table/tbody/tr/td[1]/center/table/tbody/tr/td[2]/form/input[3]")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/a/img")).click();
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[2]/div/div/div[1]/a")).click();
+			
+			//dropdown4
+			
+			WebElement dropdown3 = driver.findElement(By.name("topicItem"));
+			Select select3 = new Select(dropdown3);
+			select3.selectByIndex(4);
+			driver.findElement(By.name("q")).sendKeys("5");
+			driver.findElement(By.name("d")).sendKeys("10");
+			driver.findElement(By.name("n")).sendKeys("15");
+			driver.findElement(By.name("p")).sendKeys("20");
+			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/div/div[3]/div[1]/div[2]/form/center/p[4]/input")).click();
+			
+			
+			driver.close(2000);		
+			
+
+	}
+
+}
